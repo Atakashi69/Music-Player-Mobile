@@ -1,0 +1,243 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  font-family: "Encode Sans SC", sans-serif;
+}
+
+.player-body {
+  width: 100%;
+  height: 100%;
+}
+
+.player-body .player-body-background {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  -webkit-backdrop-filter: blur(200px);
+          backdrop-filter: blur(200px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2rem;
+}
+
+.player-body .header {
+  height: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem 3rem;
+  border-bottom: 1px solid white;
+}
+
+.player-body .header .repeat,
+.player-body .header .shuffle {
+  width: 7%;
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+  margin: 0 15%;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.player-body .header .repeat.active,
+.player-body .header .shuffle.active {
+  -webkit-filter: invert(89%) sepia(10%) saturate(3053%) hue-rotate(73deg) brightness(100%) contrast(80%) drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+          filter: invert(89%) sepia(10%) saturate(3053%) hue-rotate(73deg) brightness(100%) contrast(80%) drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+}
+
+.player-body .header .username {
+  font-size: 3rem;
+  text-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.player-body .header .nav {
+  content: "";
+  width: 5%;
+  position: absolute;
+  top: 2%;
+  right: 1%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.player-body .header .nav .line {
+  width: 5px;
+  height: 5px;
+  background: white;
+  margin-bottom: 1rem;
+}
+
+.player-body .cover {
+  height: 50%;
+  padding: 3rem;
+  margin-top: 4rem;
+}
+
+.player-body .cover .cover-img {
+  width: 100%;
+  -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.player-body .player-controls {
+  height: 30%;
+  margin-bottom: 5rem;
+  padding: 3rem;
+}
+
+.player-body .player-controls .title {
+  font-size: 5rem;
+  text-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.player-body .player-controls .author {
+  font-size: 4rem;
+  text-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.player-body .player-controls .progress {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 4rem;
+}
+
+.player-body .player-controls .progress::before {
+  content: "";
+  width: 100%;
+  height: 3px;
+  left: 0;
+  top: -50%;
+  background: grey;
+  position: absolute;
+}
+
+.player-body .player-controls .progress .progressbar {
+  content: "";
+  width: 90%;
+  height: 3px;
+  left: 0;
+  top: -50%;
+  background: white;
+  position: absolute;
+}
+
+.player-body .player-controls .progress .progressbar::after {
+  content: "";
+  width: 21px;
+  height: 21px;
+  top: -8px;
+  right: 0;
+  background: white;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.player-body .player-controls .progress .progress-time,
+.player-body .player-controls .progress .length {
+  font-size: 2.5rem;
+}
+
+.player-body .player-controls .player-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 2rem;
+}
+
+.player-body .player-controls .player-buttons img {
+  width: 7%;
+}
+
+.player-body .player-controls .player-buttons .play-background {
+  width: 21%;
+  background: -webkit-gradient(linear, right bottom, left top, from(#1ab34d), to(#4de680));
+  background: linear-gradient(to left top, #1ab34d, #4de680);
+  border-radius: 50%;
+  padding: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.player-body .player-controls .player-buttons .like,
+.player-body .player-controls .player-buttons .play,
+.player-body .player-controls .player-buttons .volume,
+.player-body .player-controls .player-buttons .pause {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+
+.player-body .player-controls .player-buttons .prev,
+.player-body .player-controls .player-buttons .next {
+  -webkit-filter: invert(50%);
+          filter: invert(50%);
+}
+
+.player-body .player-controls .player-buttons .prev.active,
+.player-body .player-controls .player-buttons .next.active {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+
+.player-body .player-controls .player-buttons .prev {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.player-body .player-controls .player-buttons .play,
+.player-body .player-controls .player-buttons .pause {
+  width: 100%;
+}
+
+.player-body .player-controls .player-buttons .play {
+  content: url("../images/icons/play.svg");
+}
+
+.player-body .player-controls .player-buttons .pause {
+  content: url("../images/icons/pause.svg");
+}
+/*# sourceMappingURL=style.css.map */

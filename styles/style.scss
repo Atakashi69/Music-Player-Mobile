@@ -1,0 +1,184 @@
+@import "variables";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    color: white;
+    font-family: "Encode Sans SC", sans-serif;
+}
+
+.player-body {
+    width: 100%;
+    height: 100%;
+
+    .player-body-background {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0);
+        backdrop-filter: blur(200px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 2rem;
+    }
+
+    .header {
+        height: 10%;
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 3rem;
+        border-bottom: 1px solid white;
+
+        .repeat,
+        .shuffle {
+            width: 7%;
+            filter: invert(100%);
+            margin: 0 15%;
+            transition: 0.25s;
+
+            &.active {
+                filter: invert(89%) sepia(10%) saturate(3053%) hue-rotate(73deg) brightness(100%) contrast(80%)
+                    drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+            }
+        }
+        .username {
+            font-size: 3rem;
+            text-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+        .nav {
+            content: "";
+            width: 5%;
+            position: absolute;
+            top: 2%;
+            right: 1%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            .line {
+                width: 5px;
+                height: 5px;
+                background: white;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+    .cover {
+        height: 50%;
+        padding: 3rem;
+        margin-top: 4rem;
+
+        .cover-img {
+            width: 100%;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+    }
+    .player-controls {
+        height: 30%;
+        margin-bottom: 5rem;
+        padding: 3rem;
+
+        .title {
+            font-size: 5rem;
+            text-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+        .author {
+            font-size: 4rem;
+            text-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+        .progress {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+
+            &::before {
+                content: "";
+                width: 100%;
+                height: 3px;
+                left: 0;
+                top: -50%;
+                background: grey;
+                position: absolute;
+            }
+            .progressbar {
+                content: "";
+                width: 90%;
+                height: 3px;
+                left: 0;
+                top: -50%;
+                background: white;
+                position: absolute;
+
+                &::after {
+                    content: "";
+                    width: 21px;
+                    height: 21px;
+                    top: -8px;
+                    right: 0;
+                    background: white;
+                    position: absolute;
+                    border-radius: 50%;
+                }
+            }
+
+            .progress-time,
+            .length {
+                font-size: 2.5rem;
+            }
+        }
+        .player-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+
+            img {
+                width: 7%;
+            }
+            .play-background {
+                width: 21%;
+                background: linear-gradient(to left top, $color-green-dark, $color-green-light);
+                border-radius: 50%;
+                padding: 3rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .like,
+            .play,
+            .volume,
+            .pause {
+                filter: invert(100%);
+            }
+
+            .prev,
+            .next {
+                filter: invert(50%);
+                &.active {
+                    filter: invert(100%);
+                }
+            }
+            .prev {
+                transform: rotate(180deg);
+            }
+            .play,
+            .pause {
+                width: 100%;
+            }
+            .play {
+                content: url("../images/icons/play.svg");
+            }
+            .pause {
+                content: url("../images/icons/pause.svg");
+            }
+        }
+    }
+}
